@@ -11,27 +11,19 @@
 <div class="well">
       <h5>Pages</h5>
 
-     <?php
-            $dir = 'pages/';
+<?php
+    $dir = 'pages/';
 
-            $file_list = array();
-            $scan_list = scandir($dir);
-            echo '
-                    <li class="active"><a href="" class="drop active">Custom Pages</a>
-                        <ul class="active"> ';
+    $file_list = array();
+    $scan_list = scandir($dir);
+    echo '<a href="" class="drop active">Custom Pages</a><ul class="active"> ';
 
-            foreach($scan_list as $file)
-                if(is_file($dir.'/'.$file))
-                    $file_list[] = $file;
+    foreach($scan_list as $file) {
+        if(is_file($dir.'/'.$file)) echo '<li><a href="?content='.$file.'">'.$file.'</a></li>';
+    }
 
-            foreach($file_list as $file)
-                echo '<li><a href="?content='.$file.'">'.$file.'</a><li />';
+    '</ul>';
+?>
 
-            echo '</ul></li>';
-            ?>
 
-      <menu>
-        <li><a href="http://design.verticaltype.com/our-projects/VRScars/index.html">Vrs Cars</a></li>
-        <li><a href="http://design.verticaltype.com/our-projects/Crty/index.html">Crty</a></li>
-      </menu>
 </div>
