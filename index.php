@@ -1,52 +1,51 @@
 <?php
     if(empty($_GET['content'])) {
-        $content = 'grids/pages/article.php'; 
+        $content = 'pages/article.php'; 
     } else  {
         $_content = $_GET['content'];
-        $content = 'grids/pages/' . htmlspecialchars($_GET["content"]) . '.php';
+        $content = 'pages/' . htmlspecialchars($_GET["content"]);
     };
 
     if(empty($_GET['layout'])) {
-        $grids = 'grids/pages/home-page.php';
+        $grids = 'layouts/fluid-2.php'; 
     } else  {
         $_layout = $_GET['layout'];
-        $grids = 'grids/layout/' . htmlspecialchars($_GET["layout"]) . '.php'; 
+        $grids = 'layouts/' . htmlspecialchars($_GET["layout"]) . '.php'; 
     };
+
+    if(empty($_GET['site'])) {
+        $site = 'default';
+    } else  {
+        $site =  htmlspecialchars($_GET["site"]); 
+    };
+
+    $head = 'sites/' . $site . '/templates/' . 'head.php'; 
+    $header = 'sites/' . $site . '/templates/' . 'header.php'; 
+    $footer = 'sites/' . $site . '/templates/' . 'footer.php'; 
+    $navigation = 'navigation/left_nav.php'; 
 
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>VerticalType</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-	
-	<link href="http://devel.verticaltype.com/css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
-	<link href="http://devel.verticaltype.com/css/style.css" rel="stylesheet" type="text/css"  />
-	
-	
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-	
-  </head>
+
+
+  <?php include $head; ?>
 
   <body>
 	
 	<div id="main">
 
-            <?php include 'grids/header/verticaltype.php'; ?>
+        <?php include $header; ?>
 	
-            <?php include $grids; ?>
+        <?php include $grids; ?>
 
 	</div>
 
 	<!-- Footer -->
 
-	<?php include 'grids/footer/verticaltype.php'; ?>
+     <?php include $footer; ?>
+
 
   <!-- Javascript
     ================================================== -->
