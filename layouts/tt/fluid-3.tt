@@ -1,0 +1,50 @@
+<div class="container indent">
+<div class="clearfix"><a href="" class="logo pull-right"></a></div>
+
+    <!-- bootstrap menu -->
+        <div class="submenu">
+           <?php include 'grids/navigation/bootstrap.php'; ?>
+        </div>
+        <div class="row-fluid verticaltype">
+            <div class="span3">
+           <?php include 'grids/navigation/left_nav.php'; ?>
+            </div>
+            <div class="span8">
+                <div class="hero-unit well">
+                <h3>[% title %]</h3>
+
+                [% content %]
+
+                </div>
+            </div>
+            <div class="span3">
+            <h4>Related</h4>
+            <ul>
+            [% FOREACH column IN columns %]
+                <li>[% column %]: [% related.$column %]</li> 
+            [% END %]
+            </ul>
+
+
+            [% FOREACH key IN item.keys %]
+                [%# key %]<br />
+            [% END %]
+
+            [% FOREACH relation IN item.relationships %]
+                [% relation %]
+            [% END %]
+            [% FOREACH relation IN item.related_resultsets %]
+                [%# relation.key %]
+            [% END %]
+
+
+
+
+			</div>
+        </div>
+
+
+	</div>
+
+
+

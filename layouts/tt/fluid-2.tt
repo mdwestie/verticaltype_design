@@ -1,0 +1,37 @@
+[% TRY %]
+    [% INCLUDE $header %]
+[% CATCH %]
+
+[% END %]
+
+<div id="wrapper">
+    <div class="container">
+
+        <div class="col-md-12 area-1">
+        <h1>[% page %]</h1>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-8">[%- content -%]</div>
+
+            <div class="col-md-4 right-section">
+                [% UNLESS item %]
+                    [% IF search %]
+                    <div class="search-section">
+                    <h3>Search</h3>
+                    <div class="find-area">[% search.render %]</div>
+                    </div>
+                    [% END %]
+                [% END %]
+            </div>
+        </div>
+    </div>
+</div>
+
+
+[% TRY %]
+    [% INCLUDE $footer %]
+[% CATCH %]
+[% END %]
+
+

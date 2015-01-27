@@ -1,0 +1,31 @@
+<div class="container indent">
+      <div class="clearfix"><a href=""class="logo pull-right"></a></div>
+
+    <!-- bootstrap menu -->
+        <div class="submenu">
+            <?php include 'grids/navigation/bootstrap.php'; ?>
+        </div>
+        
+        <div class="row verticaltype">
+        <!-- Left sidebar -->
+            <div class="span4">
+            <?php include 'grids/navigation/left_nav.php'; ?>
+            </div>
+            
+        <!-- Content -->
+            <div class="span7">
+                <h1>[% title %]</h1>
+
+                [% content %]
+
+            </div>
+            
+        <!-- Right sidebar -->
+            <div class="span4">
+                <?php include 'grids/navigation/right_nav.php'; ?>
+			</div>
+        </div>			
+    </div>
+    
+
+
