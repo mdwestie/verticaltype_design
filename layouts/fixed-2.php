@@ -1,7 +1,7 @@
 <div class="container-flexible">
     <div class="container-wrapper">
         <div class="content">
-            <h1>This Is a Two-Column Fluid Layout</h1>
+            <h1>This Is a Two-Column Fixed Layout</h1>
 
             <?php include $content; ?>
 
